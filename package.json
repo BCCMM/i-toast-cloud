@@ -1,0 +1,23 @@
+{
+  "name": "i-toast-cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BCCMM/i-toast-cloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BCCMM/i-toast-cloud/issues"
+  },
+  "homepage": "https://github.com/BCCMM/i-toast-cloud#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
