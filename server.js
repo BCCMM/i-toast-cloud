@@ -10,3 +10,15 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send('TODO: add UI');
 });
+
+app.post('/flush-toast', (req, res) => {
+    res.sendStatus(200);
+});
+
+app.get('/status', (req, res) => {
+    res.sendStatus(200);
+});
+
+app.get('/get-toast', (req, res) => {
+    res.send({ flushToast: false });
+});
