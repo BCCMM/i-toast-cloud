@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+let toaster = new (require('./toaster'))()
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
@@ -12,7 +14,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/flush-toast', (req, res) => {
-    res.sendStatus(200);
+    try {
+        toaster.flush();
+        res.sendStatus(200);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).send(err);
+    }
 });
 
 app.get('/status', (req, res) => {
@@ -20,5 +29,5 @@ app.get('/status', (req, res) => {
 });
 
 app.get('/get-toast', (req, res) => {
-    res.send({ flushToast: false });
+    res.send({ flushToast: toaster.isFlushed() });
 });
