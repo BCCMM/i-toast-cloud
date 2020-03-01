@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
     res.send('TODO: add UI');
 });
 
+app.get('/reset', (req, res) => {
+    toaster.reset();
+    res.sendStatus(200);
+});
+
 app.post('/flush-toast', (req, res) => {
     try {
         toaster.flush();

@@ -21,6 +21,10 @@ class Toaster {
     isFlushed() {
         return this.state != ToasterState.notFlushed;
     }
+
+    reset() {
+        this.state = ToasterState.notFlushed;
+    }
 }
 
 module.exports = Toaster;
